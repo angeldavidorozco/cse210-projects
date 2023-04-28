@@ -9,9 +9,9 @@ public class LoadJournal
 
     public string _filename = "";
 
-    public string _savedEntry = "";
+    /*public string _savedEntry = "";
 
-    public List<string> SavedEntries = new List<string>();
+    public List<string> SavedEntries = new List<string>();*/
 
     public CreateJournal SavedJournal = new CreateJournal();
 
@@ -26,7 +26,7 @@ public class LoadJournal
         foreach (string line in lines)
         {
                  
-            SavedJournal.entries.Add(line);
+            SavedJournal._entries.Add(line);
 
 
         }

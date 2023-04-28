@@ -6,14 +6,14 @@ public class SaveJournal
 {
 
     public string _filename = "";
-    public List<string> newEntries = new List<string>();
+    public List<string> _newEntries = new List<string>();
     
     public void Save ()
     {
 
         using (StreamWriter outputFile = new StreamWriter(_filename))
         {
-            foreach (string line in newEntries)
+            foreach (string line in _newEntries)
             {
                 outputFile.WriteLine(line);
             }

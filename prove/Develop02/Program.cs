@@ -40,7 +40,7 @@ class Program
 
                     string entry = Entry._newEntry;
 
-                    Journal.entries.Add(entry);
+                    Journal._entries.Add(entry);
 
 
                     break;
@@ -63,7 +63,7 @@ class Program
 
                     file.Load();
 
-                    Journal.entries.AddRange(file.SavedJournal.entries);
+                    Journal._entries.AddRange(file.SavedJournal._entries);
             
                     
                     break;
@@ -93,7 +93,7 @@ class Program
                         if(decision == "y")
                         {
 
-                            Saving.newEntries = Journal.entries;
+                            Saving._newEntries = Journal._entries;
                             Saving.Save();
 
                         }
@@ -107,7 +107,7 @@ class Program
                     else
                     {
 
-                        Saving.newEntries = Journal.entries;
+                        Saving._newEntries = Journal._entries;
                         Saving.Save();
 
                     }

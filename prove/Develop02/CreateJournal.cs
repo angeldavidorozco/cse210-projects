@@ -3,7 +3,7 @@ using System;
 public class CreateJournal
 {
 
-    public List<string> entries = new List<string>();
+    public List<string> _entries = new List<string>();
 
     
 
@@ -13,7 +13,7 @@ public class CreateJournal
     public void DisplayJournal()
     {
 
-        foreach (string line in entries)
+        foreach (string line in _entries)
         {
 
             Console.WriteLine(line);
