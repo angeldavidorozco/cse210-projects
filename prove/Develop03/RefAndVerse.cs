@@ -18,20 +18,20 @@ public class RefAndVerse
 
     }
 
-    public RefAndVerse(string reference, int start)
+    public RefAndVerse(string reference, string start)
     {
 
-        _verse.start = start;
-        _verse.end = start;
+        _verse.start = int.Parse(start);
+        _verse.end = int.Parse(start);
         _reference = reference;
 
     }
 
-    public RefAndVerse(string reference, int start, int end)
+    public RefAndVerse(string reference, string start, string end)
     {
 
-        _verse.start = start;
-        _verse.end = end;
+        _verse.start = int.Parse(start);
+        _verse.end = int.Parse(end);
         _reference = reference;
 
     }

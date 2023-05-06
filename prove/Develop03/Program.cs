@@ -8,25 +8,49 @@ class Program
         
         Scripture script = new Scripture();
         WordHider hider = new WordHider();
+        
 
-        int start, end;
+        //int start, end;
         string[] words;
         (int s, int e) verse;
 
-        Console.Write("Enter the name of the scripture and chapter: ");
+        Console.Write("""Enter the name of the scripture and chapter: (Ex. "Alma 32")""");
         string fileName = Console.ReadLine();
         Console.Write("Versicle start: ");
-        start = int.Parse(Console.ReadLine());
+        var start = Console.ReadLine();
         Console.Write("Versicle end: ");
-        end = int.Parse(Console.ReadLine());
+        var end = Console.ReadLine();
 
-        RefAndVerse RaV = new RefAndVerse(fileName, start, end);
+        RefAndVerse RaV;
+
+        if(fileName=="")
+        {
+            RaV = new RefAndVerse();
+        }
+        else if((start != "")&(end == ""))
+        {
+            RaV = new RefAndVerse(fileName, start);
+        }
+        else if(!(File.Exists(fileName + ".txt")))
+        {
+            Console.WriteLine("Error 404. File not found. displaying 1 Nephi 1");
+            RaV = new RefAndVerse();
+        }
+        else if((fileName!="")&(start != "")&(end != "")&(int.Parse(start) <= int.Parse(end)))
+        {
+            RaV = new RefAndVerse(fileName, start, end);
+        }
+
+        else
+        {
+            RaV = new RefAndVerse();
+        }
         
         verse = RaV.GetVerse();
 
         script.Load(RaV.GetReference(), verse.s, verse.e);
 
-        //verse = RaV.GetVerse();
+        
 
         words = hider.SeparateScripture(script.GetScripture());
 

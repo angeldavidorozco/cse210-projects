@@ -9,7 +9,7 @@ public class Scripture
     private string _scripture;
     //private string _filename;
 
-    string _wholeScript;
+    private string _wholeScript;
 
     //private List<string> _referenceList = new List<string>();
 
