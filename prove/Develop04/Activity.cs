@@ -12,7 +12,6 @@ public class Activity
 
     private string _durationQuestion;
 
-    private int _total;
 
     public Activity(int act)
     {

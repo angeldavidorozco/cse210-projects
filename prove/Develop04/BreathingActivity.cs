@@ -3,7 +3,7 @@ using System;
 public class BreathingActivity : Activity
 {
 
-    private int _breathingDuration;
+    
 
     public BreathingActivity(int act) : base(act)
     {

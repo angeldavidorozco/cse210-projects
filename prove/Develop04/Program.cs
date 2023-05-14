@@ -7,7 +7,7 @@ class Program
         int exit = 0;
         int decision = 0;
         int totalDuration = 0;
-        int partialDuration = 0;
+        
         while (exit == 0)
         {
             Console.Clear();
