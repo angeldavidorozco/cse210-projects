@@ -111,7 +111,7 @@ class Program
 
                 case 3:
 
-                Console.WriteLine("What's the name of the text file?: (Add the extension .txt at the end) ");
+                Console.WriteLine("What will be the name of the text file?: (Add the extension .txt at the end) ");
                 string filename = Console.ReadLine();
 
                 string ow = "y";
@@ -124,6 +124,7 @@ class Program
 
                 if(ow.ToLower() == "y")
                 {
+                    check = 0;
 
                     Console.WriteLine("Error 404: File Not Found!");
                 
@@ -143,7 +144,7 @@ class Program
 
                 case 4:
 
-                Console.WriteLine("What's the name of the text file?: (Add the extension .txt at the end) ");
+                Console.WriteLine("What's the name of the text file you want to load?: (Add the extension .txt at the end) ");
 
                 string loadName = Console.ReadLine();
 
@@ -208,6 +209,8 @@ class Program
                 Console.WriteLine("Your goals are: ");
 
                 i = 1;
+
+                check = 1;
 
                 foreach(Goal goal in goals)
                 {
