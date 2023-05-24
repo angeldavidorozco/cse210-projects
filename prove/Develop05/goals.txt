@@ -1,0 +1,4 @@
+200
+Eternal Goal|Read the scriptures|Read the scriptures 10 min every day |42|False|0
+Simple Goal|Pray toninght|pray tonight|5|False
+Checklist Goal|Memorize a scripture|Completely remember any scripture |50|True|4|10|500
