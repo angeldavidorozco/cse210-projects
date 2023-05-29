@@ -56,7 +56,7 @@ public class Eternal : Goal
         return base.GetPoints();
     }
 
-        public override string Save()
+    public override string Save()
     {
         return $"{_name}|{base.Save()}|{_completion}";
     }
