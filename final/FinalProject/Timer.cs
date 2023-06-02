@@ -1,16 +1,55 @@
 using System;
 
-public interface Timer
+public class Timer
 {
+    private TimeSpan _elapsedTime;
+    private DateTime startTime;
+    private DateTime endTime;
 
-    public void GetTime(string scripture)
+    private double _totalTime;
+
+    public void startGame()
     {
-       for(int i = 0; i == scripture.Length; i++)
-       {
+       
+        startTime = DateTime.Now;
 
-            Console.WriteLine(i);
+    }
 
-       }
+    public double endGame()
+    {
+        endTime = DateTime.Now;
+        _elapsedTime = endTime - startTime;
+        _totalTime = _elapsedTime.TotalSeconds;
+        return _totalTime;
+    }
+
+    public void Wait(int duration)
+    {
+
+        List<string> animationString = new List<string>{"|", "/","-", "\\"};
+        
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(duration);
+
+        int i = 0;
+        
+        while(DateTime.Now < endTime)
+        {
+
+            string s = animationString[i];
+            Console.Write(s);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+
+            i++;
+
+            if(i >= animationString.Count)
+            {
+                i = 0;
+            }
+
+
+        }
 
     }
 

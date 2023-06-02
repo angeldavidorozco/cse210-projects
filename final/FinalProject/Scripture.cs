@@ -29,6 +29,11 @@ public class Scripture:Game
 
     }
 
+    public string GetPracticeScripture()
+    {
+        return _wholeScript;
+    }
+
     public string[] GetScripture()
     {
         return _scripture;

@@ -5,6 +5,8 @@ public class ScriptLoad:Scripture
 {
     private int _lastVerse;
 
+    private string _practiceScript;
+
     public ScriptLoad(string reference, string start, string ending):base(reference,start,ending)
     {
 
@@ -15,6 +17,8 @@ public class ScriptLoad:Scripture
         if((verseStart > verseEnd)||(verseStart < 0))
         {
             Console.WriteLine("Invalid verse");
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadLine();
             return false;
         }
 
@@ -23,6 +27,8 @@ public class ScriptLoad:Scripture
         if(!(File.Exists(file)))
         {
             Console.WriteLine("Error 404. File not found");
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadLine();
             return false;
         }
         
@@ -53,6 +59,8 @@ public class ScriptLoad:Scripture
         if (_lastVerse < verseEnd)
         {
             Console.WriteLine($"Error. The scripture is only {_lastVerse} versicles long");
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadLine();
             return false;
         }
 
@@ -97,9 +105,18 @@ public class ScriptLoad:Scripture
 
         }
 
-        //Setscripture(_wholeScript);
-        Setscripture(_wholeScript.Split(" "));
+        _practiceScript = _wholeScript;
+
+        char[] separators = new char[] { ' ', '\n' };
+
+        string[] subs = _wholeScript.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+        Setscripture(subs);
+
+        //Setscripture(_wholeScript.Split(" "));
 
 
     }
+
+    
 }

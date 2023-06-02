@@ -4,13 +4,14 @@ public class WordChecker:Game
 {
     private string[] _checkedScripture;
     //private string _scripturePlayed;
-
+    string _scriptureConstructor = "";
 
     public override void CheckWords(string[] scripture, string[] _fullScripture)
     {
-        string _scriptureConstructor = "";
+        
 
         _checkedScripture = _fullScripture;
+        
 
         int i = 0;
 
@@ -32,6 +33,11 @@ public class WordChecker:Game
                    _scriptureConstructor += word + " " ;
                 }
 
+            }
+            else if ((char.IsNumber(word[0])))
+            {
+                Console.Clear();
+                _scriptureConstructor += "\n\n" + word + " " ;
             }
             else
             {
@@ -58,6 +64,20 @@ public class WordChecker:Game
         {
             return false;
         }    
-    }   
+    }  
+
+    public int CheckCorrect()
+    {
+        int counter = 0;
+        string[]_playerWords = _scriptureConstructor.Split(" ");
+        foreach (string word in _playerWords)
+        {
+            if (word == "___")
+            {
+                counter++;
+            }
+        }
+        return counter;
+    } 
 
 }
