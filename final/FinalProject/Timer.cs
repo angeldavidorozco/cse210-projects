@@ -3,22 +3,22 @@ using System;
 public class Timer
 {
     private TimeSpan _elapsedTime;
-    private DateTime startTime;
-    private DateTime endTime;
+    private DateTime _startTime;
+    private DateTime _endTime;
 
     private double _totalTime;
 
     public void startGame()
     {
        
-        startTime = DateTime.Now;
+        _startTime = DateTime.Now;
 
     }
 
     public double endGame()
     {
-        endTime = DateTime.Now;
-        _elapsedTime = endTime - startTime;
+        _endTime = DateTime.Now;
+        _elapsedTime = _endTime - _startTime;
         _totalTime = _elapsedTime.TotalSeconds;
         return _totalTime;
     }
@@ -28,12 +28,12 @@ public class Timer
 
         List<string> animationString = new List<string>{"|", "/","-", "\\"};
         
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(duration);
+        DateTime _startTime = DateTime.Now;
+        DateTime _endTime = _startTime.AddSeconds(duration);
 
         int i = 0;
         
-        while(DateTime.Now < endTime)
+        while(DateTime.Now < _endTime)
         {
 
             string s = animationString[i];

@@ -72,7 +72,7 @@ public class ScriptLoad:Scripture
     public override void LoadScripture()
     {
 
-        (int Start, int End) verse = GetVerse();
+        (int start, int end) verse = GetVerse();
 
         string filename = GetReference() + ".txt";
 
@@ -97,7 +97,7 @@ public class ScriptLoad:Scripture
                 continue;
             }
 
-            if(int.Parse(value) >= verse.Start && int.Parse(value) <= verse.End)
+            if(int.Parse(value) >= verse.start && int.Parse(value) <= verse.end)
             {
                 scriptConstructor = line;
                 _wholeScript += scriptConstructor + "\n\n";

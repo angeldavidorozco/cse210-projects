@@ -4,3 +4,4 @@ Mama|20
 top user|100
 lesser user|50
 normal user|10
+Angel|82

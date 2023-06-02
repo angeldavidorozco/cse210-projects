@@ -4,13 +4,13 @@ public class Load
 {
     public void LoadScores()
     {
-        string[] Scores = System.IO.File.ReadAllLines("Saves.txt");
+        string[] scores = System.IO.File.ReadAllLines("Saves.txt");
 
         
         Dictionary<string, int> dict = new Dictionary<string, int>();
 
 
-        foreach (string line in Scores)
+        foreach (string line in scores)
         {
             string[] parts = line.Split("|");
 

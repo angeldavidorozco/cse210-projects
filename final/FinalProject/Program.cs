@@ -12,10 +12,6 @@ class Program
 
         int totalPoints = 0;
 
-
-        string[] words;
-        (int s, int e) verse;
-
         
 
         do
@@ -28,7 +24,7 @@ class Program
             Console.WriteLine("     1. Start new game");
             Console.WriteLine("     2. List Scores");
             Console.WriteLine("     3. Practice Mode");
-            Console.WriteLine("     4. Save Score");
+            Console.WriteLine("     4. Save Score, and quit the game");
             Console.WriteLine("     5. Quit");
             Console.Write("Select a choice from the menu: ");
             string input = Console.ReadLine();
@@ -219,10 +215,27 @@ class Program
 
                     save.SavePoints(totalPoints);
 
+                    quit = 1;
+
                 
                     break;
 
                 case 5:
+
+                    string checkQuit = "y";
+
+                    if(totalPoints > 0)
+                    {
+                        Console.WriteLine("Do you want to quit without saving? y/n ");
+                        checkQuit = Console.ReadLine();                        
+
+                    }
+
+                    if(checkQuit.ToLower() == "n")
+                    {
+                        break;
+                    }
+
 
                     quit = 1;
 
